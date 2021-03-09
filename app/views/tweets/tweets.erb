@@ -1,0 +1,34 @@
+
+
+<h3>Tweets</h3>
+
+<table>
+  <tr>
+    <th>Tweet Id</th>
+    <th>By</th>
+    <th>Content</th>
+    <th>View</th>
+  </tr>
+  <ul>
+  <% @tweets.each do |tweet| %>
+      <li><%=tweet.id%></li>
+      <li><%=tweet.user.username%></li>
+      <li><%=tweet.content%></li>
+      <li><a href="/tweets/<%=tweet.id%>">View</a></li
+      <br> 
+    <% end %>
+  </ul>
+
+</table>
+
+<br><br>
+
+<!-- Link to Create a New Tweet -->
+<form action="/tweets/new" method="get">
+  <input type="submit" id="submit" value="New Tweet">
+</form>
+
+<!-- Link to Log Out -->
+<form action="/logout" method="get">
+  <input type="submit" id="submit" value="Log Out">
+</form>
